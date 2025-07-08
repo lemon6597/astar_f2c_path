@@ -1,4 +1,0 @@
-Invoking command in '/home/humble/ros2_ws/build/linorobot2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/humble/ros2_ws/install/py_pub_sub:/opt/ros/humble /usr/bin/cmake --build /home/humble/ros2_ws/build/linorobot2 -- -j2 -l2
-Invoked command in '/home/humble/ros2_ws/build/linorobot2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/humble/ros2_ws/install/py_pub_sub:/opt/ros/humble /usr/bin/cmake --build /home/humble/ros2_ws/build/linorobot2 -- -j2 -l2
-Invoking command in '/home/humble/ros2_ws/build/linorobot2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/humble/ros2_ws/install/py_pub_sub:/opt/ros/humble /usr/bin/cmake --install /home/humble/ros2_ws/build/linorobot2
-Invoked command in '/home/humble/ros2_ws/build/linorobot2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/humble/ros2_ws/install/py_pub_sub:/opt/ros/humble /usr/bin/cmake --install /home/humble/ros2_ws/build/linorobot2

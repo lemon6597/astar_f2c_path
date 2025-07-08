@@ -1,0 +1,193 @@
+[0.217s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.217s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=2, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x72dceea33fd0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x72dceea33a60>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x72dceea33a60>>)
+[0.431s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.431s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.431s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.431s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.431s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.431s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.431s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/humble/ros2_ws'
+[0.431s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.431s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.431s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.431s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.431s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.431s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.431s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.431s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.431s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/firebase_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/firebase_bridge) by extension 'ignore'
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/firebase_bridge) by extension 'ignore_ament_install'
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/firebase_bridge) by extensions ['colcon_pkg']
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/firebase_bridge) by extension 'colcon_pkg'
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/firebase_bridge) by extensions ['colcon_meta']
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/firebase_bridge) by extension 'colcon_meta'
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/firebase_bridge) by extensions ['ros']
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/firebase_bridge) by extension 'ros'
+[0.457s] DEBUG:colcon.colcon_core.package_identification:Package 'src/firebase_bridge' with type 'ros.ament_python' and name 'firebase_bridge'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_pub_sub) by extensions ['ignore', 'ignore_ament_install']
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_pub_sub) by extension 'ignore'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_pub_sub) by extension 'ignore_ament_install'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_pub_sub) by extensions ['colcon_pkg']
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_pub_sub) by extension 'colcon_pkg'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_pub_sub) by extensions ['colcon_meta']
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_pub_sub) by extension 'colcon_meta'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_pub_sub) by extensions ['ros']
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_pub_sub) by extension 'ros'
+[0.458s] DEBUG:colcon.colcon_core.package_identification:Package 'src/py_pub_sub' with type 'ros.ament_python' and name 'py_pub_sub'
+[0.458s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.458s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.458s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.458s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.458s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.482s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.482s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.483s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/humble/ros2_ws/install/py_pub_sub' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.483s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/humble/ros2_ws/install/linorobot2_viz' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.483s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/humble/ros2_ws/install/linorobot2_navigation' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.483s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/humble/ros2_ws/install/linorobot2_gazebo' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.483s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/humble/ros2_ws/install/linorobot2_description' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.483s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/humble/ros2_ws/install/linorobot2_bringup' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.483s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/humble/ros2_ws/install/linorobot2_base' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.483s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/humble/ros2_ws/install/linorobot2' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.483s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/humble/ros2_ws/install/firebase_bridge' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.483s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/humble/ros2_ws/install/linorobot2_viz' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.483s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/humble/ros2_ws/install/linorobot2_navigation' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.483s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/humble/ros2_ws/install/linorobot2_gazebo' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.483s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/humble/ros2_ws/install/linorobot2_description' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.483s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/humble/ros2_ws/install/linorobot2_bringup' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.483s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/humble/ros2_ws/install/linorobot2_base' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.483s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/humble/ros2_ws/install/linorobot2' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.483s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 0 installed packages in /home/humble/ros2_ws/install
+[0.484s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 315 installed packages in /opt/ros/humble
+[0.493s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'firebase_bridge' build argument 'cmake_args' from command line to 'None'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'firebase_bridge' build argument 'cmake_target' from command line to 'None'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'firebase_bridge' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'firebase_bridge' build argument 'cmake_clean_cache' from command line to 'False'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'firebase_bridge' build argument 'cmake_clean_first' from command line to 'False'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'firebase_bridge' build argument 'cmake_force_configure' from command line to 'False'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'firebase_bridge' build argument 'ament_cmake_args' from command line to 'None'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'firebase_bridge' build argument 'catkin_cmake_args' from command line to 'None'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'firebase_bridge' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.523s] DEBUG:colcon.colcon_core.verb:Building package 'firebase_bridge' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/humble/ros2_ws/build/firebase_bridge', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/humble/ros2_ws/install/firebase_bridge', 'merge_install': False, 'path': '/home/humble/ros2_ws/src/firebase_bridge', 'symlink_install': False, 'test_result_base': None}
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'py_pub_sub' build argument 'cmake_args' from command line to 'None'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'py_pub_sub' build argument 'cmake_target' from command line to 'None'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'py_pub_sub' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'py_pub_sub' build argument 'cmake_clean_cache' from command line to 'False'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'py_pub_sub' build argument 'cmake_clean_first' from command line to 'False'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'py_pub_sub' build argument 'cmake_force_configure' from command line to 'False'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'py_pub_sub' build argument 'ament_cmake_args' from command line to 'None'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'py_pub_sub' build argument 'catkin_cmake_args' from command line to 'None'
+[0.523s] Level 5:colcon.colcon_core.verb:set package 'py_pub_sub' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.523s] DEBUG:colcon.colcon_core.verb:Building package 'py_pub_sub' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/humble/ros2_ws/build/py_pub_sub', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/humble/ros2_ws/install/py_pub_sub', 'merge_install': False, 'path': '/home/humble/ros2_ws/src/py_pub_sub', 'symlink_install': False, 'test_result_base': None}
+[0.523s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.524s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.525s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/humble/ros2_ws/src/firebase_bridge' with build type 'ament_python'
+[0.525s] Level 1:colcon.colcon_core.shell:create_environment_hook('firebase_bridge', 'ament_prefix_path')
+[0.529s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.529s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/humble/ros2_ws/install/firebase_bridge/share/firebase_bridge/hook/ament_prefix_path.ps1'
+[0.530s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/humble/ros2_ws/install/firebase_bridge/share/firebase_bridge/hook/ament_prefix_path.dsv'
+[0.531s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/humble/ros2_ws/install/firebase_bridge/share/firebase_bridge/hook/ament_prefix_path.sh'
+[0.532s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.532s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.535s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/humble/ros2_ws/src/py_pub_sub' with build type 'ament_python'
+[0.535s] Level 1:colcon.colcon_core.shell:create_environment_hook('py_pub_sub', 'ament_prefix_path')
+[0.535s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/humble/ros2_ws/install/py_pub_sub/share/py_pub_sub/hook/ament_prefix_path.ps1'
+[0.536s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/humble/ros2_ws/install/py_pub_sub/share/py_pub_sub/hook/ament_prefix_path.dsv'
+[0.536s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/humble/ros2_ws/install/py_pub_sub/share/py_pub_sub/hook/ament_prefix_path.sh'
+[0.537s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.537s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.705s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/humble/ros2_ws/src/firebase_bridge'
+[0.705s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.705s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.879s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/humble/ros2_ws/src/py_pub_sub'
+[0.879s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.879s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.141s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/humble/ros2_ws/src/firebase_bridge': PYTHONPATH=/home/humble/ros2_ws/build/firebase_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/humble/ros2_ws/install/firebase_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/firebase_bridge build --build-base /home/humble/ros2_ws/build/firebase_bridge/build install --record /home/humble/ros2_ws/build/firebase_bridge/install.log --single-version-externally-managed install_data
+[1.150s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/humble/ros2_ws/src/py_pub_sub': PYTHONPATH=/home/humble/ros2_ws/build/py_pub_sub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/humble/ros2_ws/install/py_pub_sub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/py_pub_sub build --build-base /home/humble/ros2_ws/build/py_pub_sub/build install --record /home/humble/ros2_ws/build/py_pub_sub/install.log --single-version-externally-managed install_data
+[1.341s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/humble/ros2_ws/src/firebase_bridge' returned '0': PYTHONPATH=/home/humble/ros2_ws/build/firebase_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/humble/ros2_ws/install/firebase_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/firebase_bridge build --build-base /home/humble/ros2_ws/build/firebase_bridge/build install --record /home/humble/ros2_ws/build/firebase_bridge/install.log --single-version-externally-managed install_data
+[1.345s] Level 1:colcon.colcon_core.environment:checking '/home/humble/ros2_ws/install/firebase_bridge' for CMake module files
+[1.345s] Level 1:colcon.colcon_core.environment:checking '/home/humble/ros2_ws/install/firebase_bridge' for CMake config files
+[1.346s] Level 1:colcon.colcon_core.environment:checking '/home/humble/ros2_ws/install/firebase_bridge/lib'
+[1.346s] Level 1:colcon.colcon_core.environment:checking '/home/humble/ros2_ws/install/firebase_bridge/bin'
+[1.346s] Level 1:colcon.colcon_core.environment:checking '/home/humble/ros2_ws/install/firebase_bridge/lib/pkgconfig/firebase_bridge.pc'
+[1.346s] Level 1:colcon.colcon_core.environment:checking '/home/humble/ros2_ws/install/firebase_bridge/lib/python3.10/site-packages'
+[1.346s] Level 1:colcon.colcon_core.shell:create_environment_hook('firebase_bridge', 'pythonpath')
+[1.346s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/humble/ros2_ws/install/firebase_bridge/share/firebase_bridge/hook/pythonpath.ps1'
+[1.346s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/humble/ros2_ws/install/firebase_bridge/share/firebase_bridge/hook/pythonpath.dsv'
+[1.347s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/humble/ros2_ws/install/firebase_bridge/share/firebase_bridge/hook/pythonpath.sh'
+[1.347s] Level 1:colcon.colcon_core.environment:checking '/home/humble/ros2_ws/install/firebase_bridge/bin'
+[1.347s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(firebase_bridge)
+[1.347s] INFO:colcon.colcon_core.shell:Creating package script '/home/humble/ros2_ws/install/firebase_bridge/share/firebase_bridge/package.ps1'
+[1.348s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/humble/ros2_ws/install/firebase_bridge/share/firebase_bridge/package.dsv'
+[1.349s] INFO:colcon.colcon_core.shell:Creating package script '/home/humble/ros2_ws/install/firebase_bridge/share/firebase_bridge/package.sh'
+[1.350s] INFO:colcon.colcon_core.shell:Creating package script '/home/humble/ros2_ws/install/firebase_bridge/share/firebase_bridge/package.bash'
+[1.351s] INFO:colcon.colcon_core.shell:Creating package script '/home/humble/ros2_ws/install/firebase_bridge/share/firebase_bridge/package.zsh'
+[1.352s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/humble/ros2_ws/install/firebase_bridge/share/colcon-core/packages/firebase_bridge)
+[1.370s] Level 1:colcon.colcon_core.environment:checking '/home/humble/ros2_ws/install/py_pub_sub' for CMake module files
+[1.371s] Level 1:colcon.colcon_core.environment:checking '/home/humble/ros2_ws/install/py_pub_sub' for CMake config files
+[1.371s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/humble/ros2_ws/src/py_pub_sub' returned '0': PYTHONPATH=/home/humble/ros2_ws/build/py_pub_sub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/humble/ros2_ws/install/py_pub_sub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/py_pub_sub build --build-base /home/humble/ros2_ws/build/py_pub_sub/build install --record /home/humble/ros2_ws/build/py_pub_sub/install.log --single-version-externally-managed install_data
+[1.371s] Level 1:colcon.colcon_core.environment:checking '/home/humble/ros2_ws/install/py_pub_sub/lib'
+[1.372s] Level 1:colcon.colcon_core.environment:checking '/home/humble/ros2_ws/install/py_pub_sub/bin'
+[1.372s] Level 1:colcon.colcon_core.environment:checking '/home/humble/ros2_ws/install/py_pub_sub/lib/pkgconfig/py_pub_sub.pc'
+[1.372s] Level 1:colcon.colcon_core.environment:checking '/home/humble/ros2_ws/install/py_pub_sub/lib/python3.10/site-packages'
+[1.372s] Level 1:colcon.colcon_core.shell:create_environment_hook('py_pub_sub', 'pythonpath')
+[1.372s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/humble/ros2_ws/install/py_pub_sub/share/py_pub_sub/hook/pythonpath.ps1'
+[1.372s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/humble/ros2_ws/install/py_pub_sub/share/py_pub_sub/hook/pythonpath.dsv'
+[1.373s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/humble/ros2_ws/install/py_pub_sub/share/py_pub_sub/hook/pythonpath.sh'
+[1.373s] Level 1:colcon.colcon_core.environment:checking '/home/humble/ros2_ws/install/py_pub_sub/bin'
+[1.373s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(py_pub_sub)
+[1.373s] INFO:colcon.colcon_core.shell:Creating package script '/home/humble/ros2_ws/install/py_pub_sub/share/py_pub_sub/package.ps1'
+[1.374s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/humble/ros2_ws/install/py_pub_sub/share/py_pub_sub/package.dsv'
+[1.374s] INFO:colcon.colcon_core.shell:Creating package script '/home/humble/ros2_ws/install/py_pub_sub/share/py_pub_sub/package.sh'
+[1.374s] INFO:colcon.colcon_core.shell:Creating package script '/home/humble/ros2_ws/install/py_pub_sub/share/py_pub_sub/package.bash'
+[1.375s] INFO:colcon.colcon_core.shell:Creating package script '/home/humble/ros2_ws/install/py_pub_sub/share/py_pub_sub/package.zsh'
+[1.375s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/humble/ros2_ws/install/py_pub_sub/share/colcon-core/packages/py_pub_sub)
+[1.376s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.376s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.376s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.376s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.384s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.384s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.384s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.398s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.398s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/humble/ros2_ws/install/local_setup.ps1'
+[1.399s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/humble/ros2_ws/install/_local_setup_util_ps1.py'
+[1.400s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/humble/ros2_ws/install/setup.ps1'
+[1.401s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/humble/ros2_ws/install/local_setup.sh'
+[1.401s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/humble/ros2_ws/install/_local_setup_util_sh.py'
+[1.402s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/humble/ros2_ws/install/setup.sh'
+[1.402s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/humble/ros2_ws/install/local_setup.bash'
+[1.403s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/humble/ros2_ws/install/setup.bash'
+[1.404s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/humble/ros2_ws/install/local_setup.zsh'
+[1.405s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/humble/ros2_ws/install/setup.zsh'
