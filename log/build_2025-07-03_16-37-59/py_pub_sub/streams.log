@@ -1,0 +1,24 @@
+[0.394s] Invoking command in '/home/humble/ros2_ws/src/py_pub_sub': PYTHONPATH=/home/humble/ros2_ws/build/py_pub_sub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/humble/ros2_ws/install/py_pub_sub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/py_pub_sub build --build-base /home/humble/ros2_ws/build/py_pub_sub/build install --record /home/humble/ros2_ws/build/py_pub_sub/install.log --single-version-externally-managed install_data
+[0.541s] running egg_info
+[0.541s] writing ../../build/py_pub_sub/py_pub_sub.egg-info/PKG-INFO
+[0.541s] writing dependency_links to ../../build/py_pub_sub/py_pub_sub.egg-info/dependency_links.txt
+[0.542s] writing entry points to ../../build/py_pub_sub/py_pub_sub.egg-info/entry_points.txt
+[0.542s] writing requirements to ../../build/py_pub_sub/py_pub_sub.egg-info/requires.txt
+[0.542s] writing top-level names to ../../build/py_pub_sub/py_pub_sub.egg-info/top_level.txt
+[0.543s] reading manifest file '../../build/py_pub_sub/py_pub_sub.egg-info/SOURCES.txt'
+[0.544s] writing manifest file '../../build/py_pub_sub/py_pub_sub.egg-info/SOURCES.txt'
+[0.544s] running build
+[0.544s] running build_py
+[0.545s] running install
+[0.545s] running install_lib
+[0.546s] running install_data
+[0.546s] copying package.xml -> /home/humble/ros2_ws/install/py_pub_sub/share/py_pub_sub
+[0.546s] running install_egg_info
+[0.548s] removing '/home/humble/ros2_ws/install/py_pub_sub/lib/python3.10/site-packages/py_pub_sub-0.0.0-py3.10.egg-info' (and everything under it)
+[0.548s] Copying ../../build/py_pub_sub/py_pub_sub.egg-info to /home/humble/ros2_ws/install/py_pub_sub/lib/python3.10/site-packages/py_pub_sub-0.0.0-py3.10.egg-info
+[0.549s] running install_scripts
+[0.563s] Installing Astar script to /home/humble/ros2_ws/install/py_pub_sub/lib/py_pub_sub
+[0.563s] Installing Start script to /home/humble/ros2_ws/install/py_pub_sub/lib/py_pub_sub
+[0.563s] Installing talker script to /home/humble/ros2_ws/install/py_pub_sub/lib/py_pub_sub
+[0.564s] writing list of installed files to '/home/humble/ros2_ws/build/py_pub_sub/install.log'
+[0.585s] Invoked command in '/home/humble/ros2_ws/src/py_pub_sub' returned '0': PYTHONPATH=/home/humble/ros2_ws/build/py_pub_sub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/humble/ros2_ws/install/py_pub_sub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/py_pub_sub build --build-base /home/humble/ros2_ws/build/py_pub_sub/build install --record /home/humble/ros2_ws/build/py_pub_sub/install.log --single-version-externally-managed install_data
