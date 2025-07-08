@@ -54,7 +54,7 @@
     radius="${wheel_radius}" 
     width="${wheel_width}" 
     pos_x="${wheel_pos_x_2}" 
-    pos_y="${-wheel_pos_y_2}" 
+    pos_y="${wheel_pos_y_2}" 
     pos_z="${wheel_pos_z}" 
     mass="${wheel_mass}"
   />

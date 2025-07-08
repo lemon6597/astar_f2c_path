@@ -1,0 +1,3 @@
+[console_scripts]
+firebase = firebase_bridge.pub_test:main
+

@@ -1,0 +1,34 @@
+[0.005s] Invoking command in '/home/humble/ros2_ws/build/linorobot2_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/humble/ros2_ws/install/py_pub_sub:/home/humble/ros2_ws/install/firebase_bridge:/opt/ros/humble /usr/bin/cmake --build /home/humble/ros2_ws/build/linorobot2_bringup -- -j2 -l2
+[0.037s] Invoked command in '/home/humble/ros2_ws/build/linorobot2_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/humble/ros2_ws/install/py_pub_sub:/home/humble/ros2_ws/install/firebase_bridge:/opt/ros/humble /usr/bin/cmake --build /home/humble/ros2_ws/build/linorobot2_bringup -- -j2 -l2
+[0.041s] Invoking command in '/home/humble/ros2_ws/build/linorobot2_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/humble/ros2_ws/install/py_pub_sub:/home/humble/ros2_ws/install/firebase_bridge:/opt/ros/humble /usr/bin/cmake --install /home/humble/ros2_ws/build/linorobot2_bringup
+[0.045s] -- Install configuration: ""
+[0.045s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/launch
+[0.045s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/launch/bringup.launch.py
+[0.045s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/launch/custom_robot.launch.py
+[0.045s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/launch/sensors.launch.py
+[0.045s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/launch/joy_teleop.launch.py
+[0.046s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/launch/depth.launch.py
+[0.046s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/launch/extra.launch.py
+[0.046s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/launch/lasers.launch.py
+[0.046s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/launch/default_robot.launch.py
+[0.046s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/config
+[0.046s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/config/joy.yaml
+[0.046s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/config/fake_laser.yaml
+[0.046s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/config/zed_common.yaml
+[0.046s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/config/box_laser_filter.yaml
+[0.046s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/ament_index/resource_index/package_run_dependencies/linorobot2_bringup
+[0.046s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/ament_index/resource_index/parent_prefix_path/linorobot2_bringup
+[0.046s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/environment/ament_prefix_path.sh
+[0.047s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/environment/ament_prefix_path.dsv
+[0.047s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/environment/path.sh
+[0.047s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/environment/path.dsv
+[0.047s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/local_setup.bash
+[0.047s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/local_setup.sh
+[0.047s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/local_setup.zsh
+[0.047s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/local_setup.dsv
+[0.047s] -- Installing: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/package.dsv
+[0.047s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/ament_index/resource_index/packages/linorobot2_bringup
+[0.047s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/cmake/linorobot2_bringupConfig.cmake
+[0.047s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/cmake/linorobot2_bringupConfig-version.cmake
+[0.048s] -- Up-to-date: /home/humble/ros2_ws/install/linorobot2_bringup/share/linorobot2_bringup/package.xml
+[0.051s] Invoked command in '/home/humble/ros2_ws/build/linorobot2_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/humble/ros2_ws/install/py_pub_sub:/home/humble/ros2_ws/install/firebase_bridge:/opt/ros/humble /usr/bin/cmake --install /home/humble/ros2_ws/build/linorobot2_bringup

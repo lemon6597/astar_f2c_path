@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../../build/firebase_bridge/firebase_bridge.egg-info/PKG-INFO
+../../build/firebase_bridge/firebase_bridge.egg-info/SOURCES.txt
+../../build/firebase_bridge/firebase_bridge.egg-info/dependency_links.txt
+../../build/firebase_bridge/firebase_bridge.egg-info/entry_points.txt
+../../build/firebase_bridge/firebase_bridge.egg-info/requires.txt
+../../build/firebase_bridge/firebase_bridge.egg-info/top_level.txt
+../../build/firebase_bridge/firebase_bridge.egg-info/zip-safe
+firebase_bridge/__init__.py
+firebase_bridge/pub_test.py
+resource/firebase_bridge
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py
