@@ -10,6 +10,7 @@ setup.py
 ../../build/py_pub_sub/py_pub_sub.egg-info/zip-safe
 launch/plan_launch.py
 py_pub_sub/Astar.py
+py_pub_sub/Field2Cover.py
 py_pub_sub/Start.py
 py_pub_sub/__init__.py
 py_pub_sub/test_publisher.py

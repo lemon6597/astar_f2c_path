@@ -1,0 +1,61 @@
+[0.007s] Invoking command in '/home/humble/ros2_ws/build/linorobot2_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/humble/ros2_ws/install/py_pub_sub:/opt/ros/humble /usr/bin/cmake /home/humble/ros2_ws/src/linorobot2/linorobot2_gazebo -DCMAKE_INSTALL_PREFIX=/home/humble/ros2_ws/install/linorobot2_gazebo
+[0.061s] -- The C compiler identification is GNU 11.4.0
+[0.113s] -- The CXX compiler identification is GNU 11.4.0
+[0.119s] -- Detecting C compiler ABI info
+[0.173s] -- Detecting C compiler ABI info - done
+[0.178s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.179s] -- Detecting C compile features
+[0.179s] -- Detecting C compile features - done
+[0.182s] -- Detecting CXX compiler ABI info
+[0.239s] -- Detecting CXX compiler ABI info - done
+[0.245s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.245s] -- Detecting CXX compile features
+[0.246s] -- Detecting CXX compile features - done
+[0.247s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.353s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.439s] -- Found rclpy: 3.3.16 (/opt/ros/humble/share/rclpy/cmake)
+[0.844s] Traceback (most recent call last):
+[0.844s]   File "/home/humble/ros2_ws/src/linorobot2/linorobot2_gazebo/scripts/map2gazebo.py", line 3, in <module>
+[0.844s]     import trimesh
+[0.844s] ModuleNotFoundError: No module named 'trimesh'
+[0.876s] [33mCMake Warning at CMakeLists.txt:18 (message):
+[0.876s]   Python script execution failed with error code: 1
+[0.876s] 
+[0.876s] [0m
+[0.876s] [33mCMake Warning at CMakeLists.txt:19 (message):
+[0.876s]   Script output:
+[0.876s] 
+[0.876s] [0m
+[0.921s] -- Configuring done
+[0.922s] -- Generating done
+[0.924s] -- Build files have been written to: /home/humble/ros2_ws/build/linorobot2_gazebo
+[0.927s] Invoked command in '/home/humble/ros2_ws/build/linorobot2_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/humble/ros2_ws/install/py_pub_sub:/opt/ros/humble /usr/bin/cmake /home/humble/ros2_ws/src/linorobot2/linorobot2_gazebo -DCMAKE_INSTALL_PREFIX=/home/humble/ros2_ws/install/linorobot2_gazebo
+[0.928s] Invoking command in '/home/humble/ros2_ws/build/linorobot2_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/humble/ros2_ws/install/py_pub_sub:/opt/ros/humble /usr/bin/cmake --build /home/humble/ros2_ws/build/linorobot2_gazebo -- -j2 -l2
+[0.961s] Invoked command in '/home/humble/ros2_ws/build/linorobot2_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/humble/ros2_ws/install/py_pub_sub:/opt/ros/humble /usr/bin/cmake --build /home/humble/ros2_ws/build/linorobot2_gazebo -- -j2 -l2
+[0.961s] Invoking command in '/home/humble/ros2_ws/build/linorobot2_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/humble/ros2_ws/install/py_pub_sub:/opt/ros/humble /usr/bin/cmake --install /home/humble/ros2_ws/build/linorobot2_gazebo
+[0.966s] -- Install configuration: ""
+[0.966s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/launch
+[0.966s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/launch/gazebo.launch.py
+[0.967s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/rviz
+[0.967s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/rviz/view_urdf.rviz
+[0.967s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/worlds
+[0.967s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/worlds/playground.world
+[0.967s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/worlds/gas_station.world
+[0.968s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/lib/linorobot2_gazebo/command_timeout.py
+[0.968s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/environment/linorobot2_gazebo.sh
+[0.968s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/ament_index/resource_index/package_run_dependencies/linorobot2_gazebo
+[0.968s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/ament_index/resource_index/parent_prefix_path/linorobot2_gazebo
+[0.968s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/environment/ament_prefix_path.sh
+[0.969s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/environment/ament_prefix_path.dsv
+[0.969s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/environment/path.sh
+[0.969s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/environment/path.dsv
+[0.969s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/local_setup.bash
+[0.969s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/local_setup.sh
+[0.969s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/local_setup.zsh
+[0.969s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/local_setup.dsv
+[0.970s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/package.dsv
+[0.970s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/ament_index/resource_index/packages/linorobot2_gazebo
+[0.970s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/cmake/linorobot2_gazeboConfig.cmake
+[0.970s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/cmake/linorobot2_gazeboConfig-version.cmake
+[0.970s] -- Installing: /home/humble/ros2_ws/install/linorobot2_gazebo/share/linorobot2_gazebo/package.xml
+[0.972s] Invoked command in '/home/humble/ros2_ws/build/linorobot2_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/humble/ros2_ws/install/py_pub_sub:/opt/ros/humble /usr/bin/cmake --install /home/humble/ros2_ws/build/linorobot2_gazebo
