@@ -1,0 +1,3 @@
+[console_scripts]
+mqtt = car_mqtt_client.mqtt_node:main
+

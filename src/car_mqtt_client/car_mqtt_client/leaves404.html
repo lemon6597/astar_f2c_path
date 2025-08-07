@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 LEAVES - 智能掃地車控制系統</title>
+  <style>
+    :root {
+      --primary: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      --secondary: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      --dark: #0f0f23;
+      --darker: #0a0a1a;
+      --darkest: #050505;
+      --light: #ecf0f1;
+      --gold: #f1c40f;
+      --silver: #bdc3c7;
+      --ice-blue: #74b9ff;
+      --steel: #636e72;
+      --glass: rgba(255,255,255,0.05);
+      --glass-border: rgba(255,255,255,0.1);
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      --text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+      --accent-gold: #d4af37;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--darkest);
+      color: var(--light);
+      overflow-x: hidden;
+    }
+
+    /* 冷色系背景動畫 */
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(-45deg, #0f0f23, #1a1a2e, #2c3e50, #34495e);
+      background-size: 400% 400%;
+      animation: gradientShift 20s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* 金色粒子效果 */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: var(--accent-gold);
+      border-radius: 50%;
+      animation: float 8s infinite linear;
+      opacity: 0.6;
+    }
+
+    .particle:nth-child(even) {
+      background: var(--silver);
+      animation-duration: 10s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.6;
+      }
+      90% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-10px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* 登入頁面 */
+    .login-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .login-container {
+      background: var(--glass);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--glass-border);
+      border-radius: 25px;
+      padding: 3.5rem;
+      box-shadow: var(--shadow);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+      animation: slideUp 1s ease;
+      position: relative;
+    }
+
+    .login-container::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, var(--accent-gold), var(--silver), var(--accent-gold));
+      border-radius: 25px;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .logo {
+      font-size: 3.5rem;
+      font-weight: 900;
+      background: linear-gradient(45deg, var(--accent-gold), var(--light), var(--accent-gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+      text-shadow: var(--text-shadow);
+      letter-spacing: 2px;
+    }
+
+    .vehicle-name {
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--silver);
+      margin-bottom: 1rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.7;
+      color: var(--ice-blue);
+    }
+
+    .form-group {
+      margin-bottom: 1.8rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.8rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 1.2rem;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      color: var(--light);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+      background: rgba(0,0,0,0.5);
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 1.2rem;
+      background: linear-gradient(135deg, var(--dark), var(--darker));
+      border: 2px solid var(--accent-gold);
+      border-radius: 12px;
+      color: var(--accent-gold);
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-login:hover {
+      background: linear-gradient(135deg, var(--accent-gold), var(--gold));
+      color: var(--darkest);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+    }
+
+    .error-message {
+      background: rgba(231, 76, 60, 0.15);
+      border: 1px solid #e74c3c;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+      color: #e74c3c;
+      display: none;
+    }
+
+    /* 主控制面板 */
+    .control-system {
+      display: none;
+      min-height: 100vh;
+    }
+
+    .control-system.active {
+      display: block;
+    }
+
+    .navbar {
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(25px);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .navbar-logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      background: linear-gradient(45deg, var(--accent-gold), var(--light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .navbar-subtitle {
+      font-size: 0.9rem;
+      color: var(--silver);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .navbar-menu {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .navbar-menu a {
+      color: var(--light);
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .navbar-menu a:hover {
+      background: var(--glass);
+      color: var(--accent-gold);
+      border-color: var(--glass-border);
+    }
+
+    .navbar-menu a.active {
+      background: linear-gradient(135deg, var(--accent-gold), var(--gold));
+      color: var(--darkest);
+      font-weight: 600;
+    }
+
+    .dashboard {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(25px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-gold), var(--silver));
+      border-radius: 20px 20px 0 0;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+      border-color: var(--accent-gold);
+    }
+
+    .card-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      background: linear-gradient(45deg, var(--accent-gold), var(--light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .status-item {
+      background: var(--darkest);
+      padding: 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid var(--steel);
+      transition: all 0.3s ease;
+    }
+
+    .status-item:hover {
+      border-color: var(--accent-gold);
+      transform: scale(1.02);
+    }
+
+    .status-value {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--accent-gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .status-label {
+      font-size: 0.9rem;
+      color: var(--silver);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .control-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin: 2rem 0;
+    }
+
+    .control-btn {
+      padding: 1.2rem;
+      background: linear-gradient(135deg, var(--dark), var(--darker));
+      border: 2px solid var(--steel);
+      border-radius: 12px;
+      color: var(--light);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .control-btn:hover {
+      transform: scale(1.05);
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+    }
+
+    .control-btn.emergency {
+      background: linear-gradient(45deg, #c0392b, #e74c3c);
+      border-color: #e74c3c;
+      color: white;
+    }
+
+    .control-btn.emergency:hover {
+      background: linear-gradient(45deg, #a93226, #cb4335);
+    }
+
+    .control-btn.active {
+      background: linear-gradient(45deg, var(--accent-gold), var(--gold));
+      color: var(--darkest);
+      border-color: var(--gold);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      grid-column: 1 / -1;
+    }
+
+    .video-container {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      background: var(--darkest);
+      aspect-ratio: 16/9;
+      border: 2px solid var(--steel);
+      transition: all 0.3s ease;
+    }
+
+    .video-container:hover {
+      border-color: var(--accent-gold);
+    }
+
+    .video-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.1) brightness(0.9);
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(10px);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--accent-gold);
+      border: 1px solid var(--glass-border);
+    }
+
+    .settings-panel {
+      grid-column: 1 / -1;
+    }
+
+    .settings-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--steel);
+      transition: all 0.3s ease;
+    }
+
+    .settings-row:hover {
+      color: var(--accent-gold);
+    }
+
+    .toggle-switch {
+      position: relative;
+      width: 65px;
+      height: 35px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--steel);
+      transition: .4s;
+      border-radius: 35px;
+      border: 2px solid var(--darker);
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 25px;
+      width: 25px;
+      left: 4px;
+      bottom: 3px;
+      background-color: var(--light);
+      transition: .4s;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    input:checked + .slider {
+      background: linear-gradient(135deg, var(--accent-gold), var(--gold));
+      border-color: var(--accent-gold);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(30px);
+    }
+
+    .logout-btn {
+      background: linear-gradient(135deg, var(--dark), var(--darker));
+      color: var(--light);
+      border: 2px solid var(--steel);
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .logout-btn:hover {
+      background: linear-gradient(135deg, #c0392b, #e74c3c);
+      border-color: #e74c3c;
+      color: white;
+    }
+
+    .status-display {
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--ice-blue);
+      background: var(--darkest);
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--steel);
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .navbar-menu {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .dashboard {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+      
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-animation"></div>
+  <div class="particles" id="particles"></div>
+
+  <!-- 登入頁面 -->
+  <div class="login-page" id="loginPage">
+    <div class="login-container">
+      <div class="logo">404 LEAVES</div>
+      <div class="vehicle-name">自主清掃系統</div>
+      <div class="subtitle">高端智能掃地車控制中心</div>
+      
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">管理員帳號</label>
+          <input type="text" id="username" name="username" placeholder="請輸入系統帳號" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">安全密碼</label>
+          <input type="password" id="password" name="password" placeholder="請輸入授權密碼" required>
+        </div>
+        
+        <button type="submit" class="btn-login">啟動控制系統</button>
+      </form>
+      
+      <div id="errorMessage" class="error-message">
+        登入失敗！請檢查帳號密碼是否正確。
+      </div>
+      
+      <p style="font-size: 0.85rem; opacity: 0.5; margin-top: 1rem; color: var(--silver);">
+        演示帳號：admin / 密碼：leaves404
+      </p>
+    </div>
+  </div>
+
+  <!-- 主控制系統 -->
+  <div class="control-system" id="controlSystem">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <div>
+          <div class="navbar-logo">404 LEAVES</div>
+          <div class="navbar-subtitle">Control Center</div>
+        </div>
+      </div>
+      <div class="navbar-menu">
+        <a href="#" class="active" onclick="showTab('dashboard')">主控台</a>
+        <a href="#" onclick="showTab('monitoring')">監控中心</a>
+        <a href="#" onclick="showTab('settings')">系統配置</a>
+      </div>
+      <button class="logout-btn" onclick="logout()">安全登出</button>
+    </nav>
+
+    <div class="dashboard" id="dashboardTab">
+      <div class="card">
+        <div class="card-title">系統狀態監控</div>
+        <div class="status-grid">
+          <div class="status-item">
+            <div class="status-value" id="batteryLevel">87%</div>
+            <div class="status-label">電池電量</div>
+          </div>
+          <div class="status-item">
+            <div class="status-value" id="cleaningTime">2.3hr</div>
+            <div class="status-label">運行時間</div>
+          </div>
+          <div class="status-item">
+            <div class="status-value" id="areaClean">52m²</div>
+            <div class="status-label">清掃面積</div>
+          </div>
+          <div class="status-item">
+            <div class="status-value" id="systemTemp">21°C</div>
+            <div class="status-label">核心溫度</div>
+          </div>
+        </div>
+        
+        <div class="control-buttons">
+          <button class="control-btn" onclick="sendCommand('start')">啟動清掃</button>
+          <button class="control-btn" onclick="sendCommand('pause')">暫停作業</button>
+          <button class="control-btn" onclick="sendCommand('home')">返回基站</button>
+          <button class="control-btn" onclick="sendCommand('spot')">局部清理</button>
+          <button class="control-btn" onclick="sendCommand('edge')">邊緣模式</button>
+          <button class="control-btn emergency" onclick="sendCommand('emergency')">緊急中止</button>
+        </div>
+        
+        <div id="systemStatus" class="status-display">404 LEAVES 系統狀態：待機中</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">智能作業模式</div>
+        <div class="control-buttons">
+          <button class="control-btn" onclick="setMode('auto')">自動導航</button>
+          <button class="control-btn" onclick="setMode('manual')">手動控制</button>
+          <button class="control-btn" onclick="setMode('schedule')">排程作業</button>
+        </div>
+        
+        <div class="settings-row">
+          <span>深度清掃模式</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="deepClean">
+            <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="settings-row">
+          <span>靜音運行模式</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="quietMode">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="settings-row">
+          <span>夜間自動充電</span>
+          <label class="toggle-switch">
+            <input type="checkbox" checked id="autoCharge">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard" id="monitoringTab" style="display: none;">
+      <div class="video-grid">
+        <div class="card">
+          <div class="card-title">前置視角 Camera-A</div>
+          <div class="video-container">
+            <img id="camera-front" src="" alt="前置攝影機">
+            <div class="video-overlay">4K UHD</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">後置視角 Camera-B</div>
+          <div class="video-container">
+            <img id="camera-back" src="" alt="後置攝影機">
+            <div class="video-overlay">4K UHD</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">左側視角 Camera-L</div>
+          <div class="video-container">
+            <img src="https://picsum.photos/640/360?random=3" alt="左側攝影機">
+            <div class="video-overlay">HD 1080p</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">右側視角 Camera-R</div>
+          <div class="video-container">
+            <img src="https://picsum.photos/640/360?random=4" alt="右側攝影機">
+            <div class="video-overlay">HD 1080p</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">404 LEAVES 方向控制</div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 350px; margin: 0 auto;">
+          <div></div>
+          <button class="control-btn" onclick="sendCommand('forward')">↑ 前進</button>
+          <div></div>
+          <button class="control-btn" onclick="sendCommand('left')">← 左轉</button>
+          <button class="control-btn" onclick="sendCommand('stop')">⏸ 停止</button>
+          <button class="control-btn" onclick="sendCommand('right')">→ 右轉</button>
+          <div></div>
+          <button class="control-btn" onclick="sendCommand('back')">↓ 後退</button>
+          <div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard" id="settingsTab" style="display: none;">
+      <div class="card settings-panel">
+        <div class="card-title">404 LEAVES 系統配置</div>
+        
+        <div class="settings-row">
+          <span>低電量自動返航 (低於15%)</span>
+          <label class="toggle-switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="settings-row">
+          <span>語音狀態提示</span>
+          <label class="toggle-switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="settings-row">
+          <span>夜間靜音模式</span>
+          <label class="toggle-switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+        
+        <div class="settings-row">
+          <span>週末自動清掃</span>
+          <label class="toggle-switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="settings-row">
+          <span>障礙物智能迴避</span>
+          <label class="toggle-switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">清掃時程規劃</div>
+        <div class="control-buttons">
+          <button class="control-btn">週一 08:30</button>
+          <button class="control-btn">週三 14:00</button>
+          <button class="control-btn">週六 10:00</button>
+        </div>
+        <button class="control-btn" style="margin-top: 1.5rem; grid-column: 1/-1;">+ 新增排程計畫</button>
+      </div>
+
+      <div class="card">
+        <div class="card-title">系統資訊</div>
+        <div class="settings-row">
+          <span>韌體版本</span>
+          <span style="color: var(--accent-gold);">v2.4.1</span>
+        </div>
+        <div class="settings-row">
+          <span>硬體序號</span>
+          <span style="color: var(--silver);">404L-2025-0001</span>
+        </div>
+        <div class="settings-row">
+          <span>最後維護</span>
+          <span style="color: var(--ice-blue);">2025-01-15</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script>
+    // 全域變量
+    let isLoggedIn = false;
+    let currentTab = 'dashboard';
+    let statusUpdateInterval = null;
+    let cameraUpdateInterval = null;
+    
+    // 創建粒子效果
+    function createParticles() {
+      const particles = document.getElementById('particles');
+      particles.innerHTML = ''; // 清空現有粒子
+      
+      for (let i = 0; i < 25; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 8 + 's';
+        particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+        particles.appendChild(particle);
+      }
+    }
+
+    // 顯示錯誤訊息
+    function showError(message) {
+      const errorElement = document.getElementById('errorMessage');
+      errorElement.textContent = message;
+      errorElement.style.display = 'block';
+      
+      // 3秒後自動隱藏
+      setTimeout(() => {
+        errorElement.style.display = 'none';
+      }, 3000);
+    }
+
+    // 登入功能 - 修復版本
+    function handleLogin(event) {
+      event.preventDefault();
+      
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      
+      console.log('登入嘗試 - 帳號:', username, '密碼:', password);
+      
+      // 驗證帳號密碼
+      if (username === 'admin' && password === 'leaves404') {
+        console.log('登入成功！');
+        
+        // 隱藏登入頁面
+        document.getElementById('loginPage').style.display = 'none';
+        
+        // 顯示控制系統
+        const controlSystem = document.getElementById('controlSystem');
+        controlSystem.style.display = 'block';
+        controlSystem.classList.add('active');
+        
+        // 設定登入狀態
+        isLoggedIn = true;
+        
+        // 啟動系統功能
+        initializeControlSystem();
+        
+      } else {
+        console.log('登入失敗');
+        showError('登入失敗！請檢查帳號密碼是否正確。\n正確帳號: admin\n正確密碼: leaves404');
+        
+        // 清空密碼欄位
+        document.getElementById('password').value = '';
+      }
+    }
+
+    // 登出功能
+    function logout() {
+      console.log('執行登出...');
+      
+      // 停止所有定時器
+      if (statusUpdateInterval) {
+        clearInterval(statusUpdateInterval);
+        statusUpdateInterval = null;
+      }
+      if (cameraUpdateInterval) {
+        clearInterval(cameraUpdateInterval);
+        cameraUpdateInterval = null;
+      }
+      
+      // 重設狀態
+      isLoggedIn = false;
+      currentTab = 'dashboard';
+      
+      // 隱藏控制系統
+      const controlSystem = document.getElementById('controlSystem');
+      controlSystem.style.display = 'none';
+      controlSystem.classList.remove('active');
+      
+      // 顯示登入頁面
+      document.getElementById('loginPage').style.display = 'flex';
+      
+      // 清空表單
+      document.getElementById('loginForm').reset();
+      document.getElementById('errorMessage').style.display = 'none';
+      
+      // 重設系統狀態
+      resetSystemStatus();
+    }
+
+    // 重設系統狀態
+    function resetSystemStatus() {
+      document.getElementById('batteryLevel').textContent = '87%';
+      document.getElementById('cleaningTime').textContent = '2.3hr';
+      document.getElementById('areaClean').textContent = '52m²';
+      document.getElementById('systemTemp').textContent = '21°C';
+      document.getElementById('systemStatus').textContent = '404 LEAVES 系統狀態：待機中';
+    }
+
+    // 選項卡切換
+    function showTab(tabName) {
+      if (!isLoggedIn) return;
+      
+      console.log('切換到選項卡:', tabName);
+      
+      // 隱藏所有選項卡
+      document.querySelectorAll('.dashboard').forEach(tab => {
+        tab.style.display = 'none';
+      });
+      
+      // 移除所有活動狀態
+      document.querySelectorAll('.navbar-menu a').forEach(link => {
+        link.classList.remove('active');
+      });
+      
+      // 顯示選中的選項卡
+      const targetTab = document.getElementById(tabName + 'Tab');
+      if (targetTab) {
+        targetTab.style.display = 'grid';
+      }
+      
+      // 設定活動狀態
+      event.target.classList.add('active');
+      currentTab = tabName;
+    }
+
+    // 命令發送
+    function sendCommand(command) {
+      if (!isLoggedIn) return;
+      
+      const statusDisplay = document.getElementById('systemStatus');
+      const buttons = document.querySelectorAll('.control-btn');
+      
+      // 移除所有按鈕的active狀態
+      buttons.forEach(btn => btn.classList.remove('active'));
+      
+      // 添加active狀態到當前按鈕
+      if (event && event.target) {
+        event.target.classList.add('active');
+      }
+      
+      let message = '';
+      switch(command) {
+        case 'start': 
+          message = '404 LEAVES 系統狀態：啟動清掃作業中...'; 
+          break;
+        case 'pause': 
+          message = '404 LEAVES 系統狀態：作業已暫停'; 
+          break;
+        case 'home': 
+          message = '404 LEAVES 系統狀態：返回充電基站中...'; 
+          break;
+        case 'spot': 
+          message = '404 LEAVES 系統狀態：局部清理模式運行中...'; 
+          break;
+        case 'edge': 
+          message = '404 LEAVES 系統狀態：邊緣清掃模式運行中...'; 
+          break;
+        case 'emergency': 
+          message = '🚨 404 LEAVES 緊急中止系統已啟動 🚨'; 
+          break;
+        case 'forward': 
+          message = '404 LEAVES 系統狀態：前進移動中'; 
+          break;
+        case 'back': 
+          message = '404 LEAVES 系統狀態：後退移動中'; 
+          break;
+        case 'left': 
+          message = '404 LEAVES 系統狀態：左轉運行中'; 
+          break;
+        case 'right': 
+          message = '404 LEAVES 系統狀態：右轉運行中'; 
+          break;
+        case 'stop': 
+          message = '404 LEAVES 系統狀態：停止移動，待機中'; 
+          break;
+        default: 
+          message = '404 LEAVES 系統狀態：執行指令中...';
+      }
+      
+      statusDisplay.textContent = message;
+      console.log('404 LEAVES 發送命令:', command);
+      
+      // 3秒後移除active狀態
+      setTimeout(() => {
+        if (event && event.target) {
+          event.target.classList.remove('active');
+        }
+      }, 3000);
+    }
+
+    // 模式設定
+    function setMode(mode) {
+      if (!isLoggedIn) return;
+      
+      const buttons = document.querySelectorAll('.control-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      
+      if (event && event.target) {
+        event.target.classList.add('active');
+      }
+      
+      const modeMessages = {
+        'auto': '404 LEAVES 已切換至自動導航模式',
+        'manual': '404 LEAVES 已切換至手動控制模式',
+        'schedule': '404 LEAVES 已切換至排程作業模式'
+      };
+      
+      const statusDisplay = document.getElementById('systemStatus');
+      if (statusDisplay) {
+        statusDisplay.textContent = modeMessages[mode] || '404 LEAVES 模式切換中...';
+      }
+      
+      console.log('404 LEAVES 設定模式:', mode);
+      
+      setTimeout(() => {
+        if (event && event.target) {
+          event.target.classList.remove('active');
+        }
+      }, 3000);
+    }
+
+    // 狀態更新系統
+    function startStatusUpdate() {
+      if (statusUpdateInterval) {
+        clearInterval(statusUpdateInterval);
+      }
+      
+      statusUpdateInterval = setInterval(() => {
+        if (!isLoggedIn) return;
+        
+        // 模擬電池電量變化
+        const battery = document.getElementById('batteryLevel');
+        if (battery) {
+          const currentBattery = parseInt(battery.textContent);
+          if (currentBattery > 15) {
+            const newBattery = Math.max(15, currentBattery - Math.random() * 1.5);
+            battery.textContent = newBattery.toFixed(0) + '%';
+            
+            // 低電量警告
+            if (newBattery <= 20) {
+              battery.style.color = '#e74c3c';
+              battery.parentElement.style.borderColor = '#e74c3c';
+            }
+          }
+        }
+        
+        // 模擬運行時間增加
+        const time = document.getElementById('cleaningTime');
+        if (time) {
+          const currentTime = parseFloat(time.textContent);
+          time.textContent = (currentTime + 0.1).toFixed(1) + 'hr';
+        }
+        
+        // 模擬清掃面積增加
+        const area = document.getElementById('areaClean');
+        if (area) {
+          const currentArea = parseInt(area.textContent);
+          area.textContent = Math.min(999, currentArea + Math.random() * 3).toFixed(0) + 'm²';
+        }
+        
+        // 模擬溫度變化
+        const temp = document.getElementById('systemTemp');
+        if (temp) {
+          const currentTemp = parseInt(temp.textContent);
+          const newTemp = currentTemp + (Math.random() - 0.5) * 2;
+          const finalTemp = Math.max(18, Math.min(35, newTemp));
+          temp.textContent = finalTemp.toFixed(0) + '°C';
+          
+          // 溫度過高警告
+          if (finalTemp > 30) {
+            temp.style.color = '#e74c3c';
+            temp.parentElement.style.borderColor = '#e74c3c';
+          } else {
+            temp.style.color = 'var(--accent-gold)';
+            temp.parentElement.style.borderColor = 'var(--steel)';
+          }
+        }
+      }, 8000);
+    }
+
+    // 攝影機畫面更新
+    function updateCameraFeeds() {
+      if (cameraUpdateInterval) {
+        clearInterval(cameraUpdateInterval);
+      }
+      
+      cameraUpdateInterval = setInterval(() => {
+        if (!isLoggedIn) return;
+        
+        const cameras = document.querySelectorAll('.video-container img');
+        cameras.forEach((camera, index) => {
+          const randomId = Math.floor(Math.random() * 1000) + 1;
+          camera.src = `https://picsum.photos/640/360?random=${randomId}`;
+        });
+      }, 15000);
+    }
+
+    // 系統健康檢查
+    function systemHealthCheck() {
+      setInterval(() => {
+        if (!isLoggedIn) return;
+        
+        const healthStatus = Math.random();
+        const statusDisplay = document.getElementById('systemStatus');
+        
+        if (statusDisplay && healthStatus > 0.95) {
+          statusDisplay.textContent = '404 LEAVES 系統自檢：所有系統運行正常';
+          statusDisplay.style.color = 'var(--accent-gold)';
+        } else if (statusDisplay && healthStatus > 0.85) {
+          statusDisplay.textContent = '404 LEAVES 系統自檢：系統運行穩定';
+          statusDisplay.style.color = 'var(--ice-blue)';
+        }
+      }, 30000);
+    }
+
+    // 初始化控制系統
+    function initializeControlSystem() {
+      console.log('初始化控制系統...');
+      startStatusUpdate();
+      updateCameraFeeds();
+      systemHealthCheck();
+    }
+
+    // 初始化系統
+    function initializeSystem() {
+      console.log('404 LEAVES 控制系統初始化中...');
+      
+      // 創建粒子效果
+      createParticles();
+      
+      // 綁定登入表單事件
+      const loginForm = document.getElementById('loginForm');
+      if (loginForm) {
+        loginForm.addEventListener('submit', handleLogin);
+      }
+      
+      // 添加鍵盤快捷鍵
+      document.addEventListener('keydown', function(e) {
+        if (!isLoggedIn) return;
+        
+        switch(e.key) {
+          case 'ArrowUp':
+            e.preventDefault();
+            sendCommand('forward');
+            break;
+          case 'ArrowDown':
+            e.preventDefault();
+            sendCommand('back');
+            break;
+          case 'ArrowLeft':
+            e.preventDefault();
+            sendCommand('left');
+            break;
+          case 'ArrowRight':
+            e.preventDefault();
+            sendCommand('right');
+            break;
+          case ' ':
+            e.preventDefault();
+            sendCommand('stop');
+            break;
+          case 'Escape':
+            e.preventDefault();
+            sendCommand('emergency');
+            break;
+        }
+      });
+      //edit
+      const client = mqtt.connect('ws://localhost:9001');
+      client.on('connect', () => {
+        console.log('已連線到 MQTT Broker');
+        client.subscribe('zed/image/front');
+        client.subscribe('zed/image/back');
+  });
+      client.on('message', (topic, message) => {
+        const imgData = 'data:image/jpeg;base64,' + message.toString();
+        if (topic === 'zed/image/front') {
+          document.getElementById('camera-front').src = imgData;
+        } else if (topic === 'zed/image/back') {
+          document.getElementById('camera-back').src = imgData;
+        }
+      });
+
+
+
+    
+      
+      // 確保初始狀態正確
+      document.getElementById('controlSystem').style.display = 'none';
+      document.getElementById('loginPage').style.display = 'flex';
+      
+      console.log('404 LEAVES 控制系統已初始化');
+      console.log('支援鍵盤控制：方向鍵移動，空白鍵停止，ESC緊急停止');
+    }
+
+    // 系統啟動
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeSystem();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+[0.829s] Invoking command in '/home/humble/ros2_ws/build/car_mqtt_client': PYTHONPATH=/home/humble/ros2_ws/build/car_mqtt_client/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/humble/ros2_ws/install/car_mqtt_client/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/humble/ros2_ws/build/car_mqtt_client/build --no-deps symlink_data --force
+[1.085s] running develop
+[1.268s] running egg_info
+[1.268s] writing car_mqtt_client.egg-info/PKG-INFO
+[1.280s] writing dependency_links to car_mqtt_client.egg-info/dependency_links.txt
+[1.280s] writing entry points to car_mqtt_client.egg-info/entry_points.txt
+[1.280s] writing requirements to car_mqtt_client.egg-info/requires.txt
+[1.280s] writing top-level names to car_mqtt_client.egg-info/top_level.txt
+[1.299s] reading manifest file 'car_mqtt_client.egg-info/SOURCES.txt'
+[1.299s] writing manifest file 'car_mqtt_client.egg-info/SOURCES.txt'
+[1.306s] running build_ext
+[1.309s] Creating /home/humble/ros2_ws/install/car_mqtt_client/lib/python3.10/site-packages/car-mqtt-client.egg-link (link to .)
+[1.329s] Installing mqtt script to /home/humble/ros2_ws/install/car_mqtt_client/lib/car_mqtt_client
+[1.329s] 
+[1.330s] Installed /home/humble/ros2_ws/build/car_mqtt_client
+[1.330s] running symlink_data
+[1.333s] symbolically linking /home/humble/ros2_ws/build/car_mqtt_client/resource/car_mqtt_client -> /home/humble/ros2_ws/install/car_mqtt_client/share/ament_index/resource_index/packages
+[1.333s] symbolically linking /home/humble/ros2_ws/build/car_mqtt_client/package.xml -> /home/humble/ros2_ws/install/car_mqtt_client/share/car_mqtt_client
+[1.482s] Invoked command in '/home/humble/ros2_ws/build/car_mqtt_client' returned '0': PYTHONPATH=/home/humble/ros2_ws/build/car_mqtt_client/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/humble/ros2_ws/install/car_mqtt_client/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/humble/ros2_ws/build/car_mqtt_client/build --no-deps symlink_data --force

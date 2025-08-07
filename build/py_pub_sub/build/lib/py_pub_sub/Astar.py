@@ -76,7 +76,7 @@ class Subscriber(Node):
             self.origin_x is None or 
             self.origin_y is None or 
             self.obstacles is None):
-            self.get_logger().warn("Map has not been received yet, skipping path planning.")
+            self.get_logger().warn("地圖尚未生成,skipping")
             return
         data = msg.data
         size = 6
@@ -94,7 +94,7 @@ class Subscriber(Node):
             grid_goal = (grid_x,grid_y)
             robot_pos = self.get_robot_position()
             if robot_pos is None:
-                self.get_logger().warn("Robot position unavailable, skipping path planning.")
+                self.get_logger().warn("獲取不到機器人位置,skipping")
                 return
             grid_start_x = int((robot_pos[0] - self.origin_x) / self.resolution)  #to gridmap
             grid_start_y = int((robot_pos[1] - self.origin_y) / self.resolution)
@@ -102,7 +102,7 @@ class Subscriber(Node):
             
             path = Astar(self.width,self.height,self.position,grid_goal,self.obstacles)
             if path is None:
-                self.get_logger().warn(f"No path found from {self.position} to {grid_goal}")
+                self.get_logger().warn(f"錯誤座標 {self.position} to {grid_goal}")
                 return
             pose_list = poseStamped_transfor(path, self.resolution, self.origin_x, self.origin_y)
 

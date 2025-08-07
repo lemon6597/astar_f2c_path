@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing car_mqtt_client.egg-info/PKG-INFO
+writing dependency_links to car_mqtt_client.egg-info/dependency_links.txt
+writing entry points to car_mqtt_client.egg-info/entry_points.txt
+writing requirements to car_mqtt_client.egg-info/requires.txt
+writing top-level names to car_mqtt_client.egg-info/top_level.txt
+reading manifest file 'car_mqtt_client.egg-info/SOURCES.txt'
+writing manifest file 'car_mqtt_client.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/humble/ros2_ws/install/car_mqtt_client/lib/python3.10/site-packages/car-mqtt-client.egg-link (link to .)
+Installing mqtt script to /home/humble/ros2_ws/install/car_mqtt_client/lib/car_mqtt_client
+
+Installed /home/humble/ros2_ws/build/car_mqtt_client
+running symlink_data
+symbolically linking /home/humble/ros2_ws/build/car_mqtt_client/resource/car_mqtt_client -> /home/humble/ros2_ws/install/car_mqtt_client/share/ament_index/resource_index/packages
+symbolically linking /home/humble/ros2_ws/build/car_mqtt_client/package.xml -> /home/humble/ros2_ws/install/car_mqtt_client/share/car_mqtt_client

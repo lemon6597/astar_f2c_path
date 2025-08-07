@@ -26,9 +26,9 @@ class WaypointFollower(Node):
                                                            self.Field2Cover_callback,
                                                            10)
         
-        # self.get_logger().info('Waiting for action server...')
-        # self._client.wait_for_server()
-        # self.get_logger().info('Action server available!')
+        self.get_logger().info('Waiting for action server...')
+        self._client.wait_for_server()
+        self.get_logger().info('Action server available!')
         
     def Astar_callback(self,msg):
         self.Astar_path = msg.poses

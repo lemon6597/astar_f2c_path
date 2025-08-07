@@ -1,0 +1,21 @@
+[0.906s] Invoking command in '/home/humble/ros2_ws/src/firebase_bridge': PYTHONPATH=/home/humble/ros2_ws/build/firebase_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/humble/ros2_ws/install/firebase_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/firebase_bridge build --build-base /home/humble/ros2_ws/build/firebase_bridge/build install --record /home/humble/ros2_ws/build/firebase_bridge/install.log --single-version-externally-managed install_data
+[1.095s] running egg_info
+[1.096s] writing ../../build/firebase_bridge/firebase_bridge.egg-info/PKG-INFO
+[1.098s] writing dependency_links to ../../build/firebase_bridge/firebase_bridge.egg-info/dependency_links.txt
+[1.099s] writing entry points to ../../build/firebase_bridge/firebase_bridge.egg-info/entry_points.txt
+[1.099s] writing requirements to ../../build/firebase_bridge/firebase_bridge.egg-info/requires.txt
+[1.099s] writing top-level names to ../../build/firebase_bridge/firebase_bridge.egg-info/top_level.txt
+[1.099s] reading manifest file '../../build/firebase_bridge/firebase_bridge.egg-info/SOURCES.txt'
+[1.100s] writing manifest file '../../build/firebase_bridge/firebase_bridge.egg-info/SOURCES.txt'
+[1.101s] running build
+[1.101s] running build_py
+[1.101s] running install
+[1.103s] running install_lib
+[1.107s] running install_data
+[1.109s] running install_egg_info
+[1.109s] removing '/home/humble/ros2_ws/install/firebase_bridge/lib/python3.10/site-packages/firebase_bridge-0.0.0-py3.10.egg-info' (and everything under it)
+[1.110s] Copying ../../build/firebase_bridge/firebase_bridge.egg-info to /home/humble/ros2_ws/install/firebase_bridge/lib/python3.10/site-packages/firebase_bridge-0.0.0-py3.10.egg-info
+[1.110s] running install_scripts
+[1.128s] Installing firebase script to /home/humble/ros2_ws/install/firebase_bridge/lib/firebase_bridge
+[1.130s] writing list of installed files to '/home/humble/ros2_ws/build/firebase_bridge/install.log'
+[1.168s] Invoked command in '/home/humble/ros2_ws/src/firebase_bridge' returned '0': PYTHONPATH=/home/humble/ros2_ws/build/firebase_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/humble/ros2_ws/install/firebase_bridge/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/firebase_bridge build --build-base /home/humble/ros2_ws/build/firebase_bridge/build install --record /home/humble/ros2_ws/build/firebase_bridge/install.log --single-version-externally-managed install_data

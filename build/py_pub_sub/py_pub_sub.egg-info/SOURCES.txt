@@ -15,7 +15,11 @@ py_pub_sub/Start.py
 py_pub_sub/__init__.py
 py_pub_sub/test_publisher.py
 py_pub_sub/test_subscriber.py
+py_pub_sub.egg-info/PKG-INFO
+py_pub_sub.egg-info/SOURCES.txt
+py_pub_sub.egg-info/dependency_links.txt
+py_pub_sub.egg-info/entry_points.txt
+py_pub_sub.egg-info/requires.txt
+py_pub_sub.egg-info/top_level.txt
+py_pub_sub.egg-info/zip-safe
 resource/py_pub_sub
-test/test_copyright.py
-test/test_flake8.py
-test/test_pep257.py

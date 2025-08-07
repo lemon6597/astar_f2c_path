@@ -1,0 +1,21 @@
+[0.922s] Invoking command in '/home/humble/ros2_ws/src/car_mqtt_client': PYTHONPATH=/home/humble/ros2_ws/build/car_mqtt_client/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/humble/ros2_ws/install/car_mqtt_client/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/car_mqtt_client build --build-base /home/humble/ros2_ws/build/car_mqtt_client/build install --record /home/humble/ros2_ws/build/car_mqtt_client/install.log --single-version-externally-managed install_data
+[1.160s] running egg_info
+[1.161s] writing ../../build/car_mqtt_client/car_mqtt_client.egg-info/PKG-INFO
+[1.163s] writing dependency_links to ../../build/car_mqtt_client/car_mqtt_client.egg-info/dependency_links.txt
+[1.163s] writing entry points to ../../build/car_mqtt_client/car_mqtt_client.egg-info/entry_points.txt
+[1.166s] writing requirements to ../../build/car_mqtt_client/car_mqtt_client.egg-info/requires.txt
+[1.166s] writing top-level names to ../../build/car_mqtt_client/car_mqtt_client.egg-info/top_level.txt
+[1.167s] reading manifest file '../../build/car_mqtt_client/car_mqtt_client.egg-info/SOURCES.txt'
+[1.168s] writing manifest file '../../build/car_mqtt_client/car_mqtt_client.egg-info/SOURCES.txt'
+[1.168s] running build
+[1.168s] running build_py
+[1.171s] running install
+[1.172s] running install_lib
+[1.172s] running install_data
+[1.173s] running install_egg_info
+[1.175s] removing '/home/humble/ros2_ws/install/car_mqtt_client/lib/python3.10/site-packages/car_mqtt_client-0.0.0-py3.10.egg-info' (and everything under it)
+[1.175s] Copying ../../build/car_mqtt_client/car_mqtt_client.egg-info to /home/humble/ros2_ws/install/car_mqtt_client/lib/python3.10/site-packages/car_mqtt_client-0.0.0-py3.10.egg-info
+[1.175s] running install_scripts
+[1.198s] Installing mqtt script to /home/humble/ros2_ws/install/car_mqtt_client/lib/car_mqtt_client
+[1.199s] writing list of installed files to '/home/humble/ros2_ws/build/car_mqtt_client/install.log'
+[1.467s] Invoked command in '/home/humble/ros2_ws/src/car_mqtt_client' returned '0': PYTHONPATH=/home/humble/ros2_ws/build/car_mqtt_client/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/humble/ros2_ws/install/car_mqtt_client/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/car_mqtt_client build --build-base /home/humble/ros2_ws/build/car_mqtt_client/build install --record /home/humble/ros2_ws/build/car_mqtt_client/install.log --single-version-externally-managed install_data
