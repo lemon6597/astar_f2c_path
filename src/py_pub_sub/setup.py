@@ -23,7 +23,10 @@ setup(
         'console_scripts': [
             "talker = py_pub_sub.test_publisher:main",
             "Astar = py_pub_sub.Astar:main",
+            "Around = py_pub_sub.goaround:main",
+            "Field2Cover = py_pub_sub.Field2Cover:main",
             "Start = py_pub_sub.Start:main",
+            
         ],
     },
 )

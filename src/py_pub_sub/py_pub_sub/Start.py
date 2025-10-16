@@ -3,6 +3,8 @@ from rclpy.node import Node
 from rclpy.action import ActionClient
 from nav2_msgs.action import FollowWaypoints
 from nav_msgs.msg import Path
+from std_msgs.msg import Float64MultiArray
+from std_msgs.msg import String
 
 
 class WaypointFollower(Node):
@@ -25,10 +27,18 @@ class WaypointFollower(Node):
                                                            "/Field2Cover_list",
                                                            self.Field2Cover_callback,
                                                            10)
+        self.resume_pub = self.create_publisher(
+            Float64MultiArray,
+            "resume", 
+            10)
+        self.dyson_pub = self.create_publisher(
+            String,
+            "dyson",
+            10)
         
-        self.get_logger().info('Waiting for action server...')
-        self._client.wait_for_server()
-        self.get_logger().info('Action server available!')
+        # self.get_logger().info('Waiting for action server...')
+        # self._client.wait_for_server()
+        # self.get_logger().info('Action server available!')
         
     def Astar_callback(self,msg):
         self.Astar_path = msg.poses
@@ -38,6 +48,7 @@ class WaypointFollower(Node):
             return
         if self.current_path is None:
             self.send_path(self.Astar_path, path_name="Astar")
+
     def Field2Cover_callback(self,msg):
         self.Field2Cover_path = msg.poses
         self.get_logger().info("Received Field2Cover path.")
@@ -55,6 +66,8 @@ class WaypointFollower(Node):
 
         self.get_logger().info(f'Sending goal with {len(poses)} waypoints...')
         self._send_goal(goal_msg)
+        if self.current_path == "Field2Cover":
+            self.start_dyson()
     
     def _send_goal(self,goal_msg):
         self._send_goal_future = self._client.send_goal_async(goal_msg)      #catch async
@@ -83,11 +96,24 @@ class WaypointFollower(Node):
                 self.get_logger().info("Field2Cover ERROR")
                 self.current_path = None
         elif self.current_path =="Field2Cover":
+            self.resume_pub.publish(Float64MultiArray(data=[1.0]))
             self.get_logger().info("Field2Cover goal")
+            self.stop_dyson()
             self.current_path = None
             self.Field2Cover_path = None
             self.Astar_path = None
             self.get_logger().info("Reset")
+    def start_dyson(self):
+        msg = String()
+        msg.data = "YES"
+        self.dyson_pub.publish(msg)
+        self.get_logger().info("Dyson ON")
+
+    def stop_dyson(self):
+        msg = String()
+        msg.data = "NO"
+        self.dyson_pub.publish(msg)
+        self.get_logger().info("Dyson OFF")
 
 def main(args=None):
     rclpy.init(args=args)

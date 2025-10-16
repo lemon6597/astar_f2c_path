@@ -19,9 +19,16 @@ def generate_launch_description():
             name='Start'
         )
     
+    Around_node = Node(
+        package='py_pub_sub',
+        executable='Around',
+        name='Around'
+    )
+    
     
     return LaunchDescription([
         Start_node,
         Astart_node,
-        Field2Cover_node
+        Field2Cover_node,
+        Around_node
     ])

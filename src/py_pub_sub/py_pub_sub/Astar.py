@@ -26,7 +26,7 @@ class Subscriber(Node):
         self.position = None
 
         self.point_subscriber = self.create_subscription(Float64MultiArray,
-                                                  "pont_data",
+                                                  "point_data",
                                                   self.sub_callback,
                                                    10)
         self.map_subscriber = self.create_subscription(OccupancyGrid,
